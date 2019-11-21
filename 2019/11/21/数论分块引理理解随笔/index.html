@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Cirnoのblog</title>
+  <title>数论分块引理理解随笔 | Cirnoのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Cirnoのblog! This is my blog. 第一篇(纪念意义？测试？)总之还是就这么开始了喵1234567#include&amp;lt;bits&#x2F;stdc++.h&amp;gt;#pragma G++ optimize(2)using namespace std;int main()&amp;#123;    printf(&quot;Hello World&quot;);    return 0;&amp;#">
-<meta name="keywords" content="hello-world">
+  <meta name="description" content="数论分块萌新今天按惯例 学习 灌水的时候碰到了这个 引理1 引理2 解决办法对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…绘制一个y = $\frac{n}{d}$ 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩">
+<meta name="keywords" content="技巧,数论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;hello-world&#x2F;index.html">
+<meta property="og:title" content="数论分块引理理解随笔">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;index.html">
 <meta property="og:site_name" content="Cirnoのblog">
-<meta property="og:description" content="Welcome to Cirnoのblog! This is my blog. 第一篇(纪念意义？测试？)总之还是就这么开始了喵1234567#include&amp;lt;bits&#x2F;stdc++.h&amp;gt;#pragma G++ optimize(2)using namespace std;int main()&amp;#123;    printf(&quot;Hello World&quot;);    return 0;&amp;#">
+<meta property="og:description" content="数论分块萌新今天按惯例 学习 灌水的时候碰到了这个 引理1 引理2 解决办法对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…绘制一个y = $\frac{n}{d}$ 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;hello-world&#x2F;hello-world_1.jpg">
-<meta property="og:updated_time" content="2019-11-20T16:07:22.985Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_3.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_4.jpg">
+<meta property="og:updated_time" content="2019-11-21T16:26:32.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;hello-world&#x2F;hello-world_1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_1.png">
   
     <link rel="alternative" href="/atom.xml" title="Cirnoのblog" type="application/atom+xml">
   
@@ -155,14 +158,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数论分块引理理解随笔" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      数论分块引理理解随笔
     </h1>
   
 
@@ -183,8 +186,8 @@
         </span>
 
 
-<a href="/2019/11/10/hello-world/" class="archive-article-date">
-  	<time datetime="2019-11-10T14:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
+<a href="/2019/11/21/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+  	<time datetime="2019-11-21T15:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -194,7 +197,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">66字</span>
+        <span class="post-count">200字</span>
       </span>
     </span>
 
@@ -214,10 +217,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://niyanpasu.github.io/" target="_blank" rel="noopener">Cirnoのblog</a>! This is my blog.</p>
-<h2 id="第一篇-纪念意义？测试？"><a href="#第一篇-纪念意义？测试？" class="headerlink" title="第一篇(纪念意义？测试？)"></a>第一篇(纪念意义？测试？)</h2><h3 id="总之还是就这么开始了喵"><a href="#总之还是就这么开始了喵" class="headerlink" title="总之还是就这么开始了喵"></a>总之还是就这么开始了喵</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="comment">#pragma G++ optimize(2)</span></span><br><span class="line">using namespace std;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World"</span>);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>感觉纯粹在没话找话写啊，尴尬.jpg<br><img src="hello-world_1.jpg" alt=""></p>
+        <h2 id="数论分块"><a href="#数论分块" class="headerlink" title="数论分块"></a>数论分块</h2><p>萌新今天按惯例 <del>学习</del> 灌水的时候碰到了这个</p>
+<h3 id="引理1"><a href="#引理1" class="headerlink" title="引理1"></a>引理1</h3><p><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_1.png" alt="" title="数论分块引理1"></p>
+<h3 id="引理2"><a href="#引理2" class="headerlink" title="引理2"></a>引理2</h3><p><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_2.png" alt="" title="数论分块引理2"></p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…<br>绘制一个y = $\frac{n}{d}$ 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩形，由图显然可得矩形最多只有超过2√n种。</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_3.jpg" alt="大佬手稿"></p>
+<p>菜鸡怎么就没想到反函数呢，嘤嘤嘤。<br><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_4.jpg" alt=""></p>
 
       
 
@@ -257,7 +262,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">hello-world</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">技巧</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">数论</a>
         		</li>
       		
 		</ul>
@@ -313,7 +322,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/10/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/21/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,15 +336,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/21/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数论分块引理理解随笔
-        
-      </div>
-    </a>
   
+    <a href="/2019/11/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -360,7 +365,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一篇-纪念意义？测试？"><span class="toc-number">1.</span> <span class="toc-text">第一篇(纪念意义？测试？)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总之还是就这么开始了喵"><span class="toc-number">1.1.</span> <span class="toc-text">总之还是就这么开始了喵</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数论分块"><span class="toc-number">1.</span> <span class="toc-text">数论分块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引理1"><span class="toc-number">1.1.</span> <span class="toc-text">引理1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引理2"><span class="toc-number">1.2.</span> <span class="toc-text">引理2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决办法"><span class="toc-number">1.3.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用"><span class="toc-number">1.4.</span> <span class="toc-text">引用</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -386,7 +391,7 @@ if(true){
   	repo: 'niyanpasu.github.io',
   	owner: 'niyanpasu',
   	admin: ['niyanpasu'],
-  	id: 'Sun Nov 10 2019 22:00:00 GMT+0800',
+  	id: 'Thu Nov 21 2019 23:30:00 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
