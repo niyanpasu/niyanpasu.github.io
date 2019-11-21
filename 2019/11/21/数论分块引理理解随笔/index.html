@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数论分块引理理解随笔 | Cirnoのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数论分块萌新今天按惯例 学习 灌水的时候碰到了这个 引理1 引理2 解决办法对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…绘制一个y = $\frac{n}{d}$ 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩">
+  <meta name="description" content="数论分块萌新今天按惯例 学习 灌水的时候碰到了这个 引理1 引理2 解决办法对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…绘制一个y = n × d^-1 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩形，由图显">
 <meta name="keywords" content="技巧,数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论分块引理理解随笔">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;index.html">
 <meta property="og:site_name" content="Cirnoのblog">
-<meta property="og:description" content="数论分块萌新今天按惯例 学习 灌水的时候碰到了这个 引理1 引理2 解决办法对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…绘制一个y = $\frac{n}{d}$ 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩">
+<meta property="og:description" content="数论分块萌新今天按惯例 学习 灌水的时候碰到了这个 引理1 引理2 解决办法对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…绘制一个y = n × d^-1 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩形，由图显">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_1.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_3.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_4.jpg">
-<meta property="og:updated_time" content="2019-11-21T16:26:32.202Z">
+<meta property="og:updated_time" content="2019-11-21T16:33:38.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94&#x2F;%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_1.png">
   
@@ -220,7 +220,7 @@
         <h2 id="数论分块"><a href="#数论分块" class="headerlink" title="数论分块"></a>数论分块</h2><p>萌新今天按惯例 <del>学习</del> 灌水的时候碰到了这个</p>
 <h3 id="引理1"><a href="#引理1" class="headerlink" title="引理1"></a>引理1</h3><p><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_1.png" alt="" title="数论分块引理1"></p>
 <h3 id="引理2"><a href="#引理2" class="headerlink" title="引理2"></a>引理2</h3><p><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_2.png" alt="" title="数论分块引理2"></p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…<br>绘制一个y = $\frac{n}{d}$ 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩形，由图显然可得矩形最多只有超过2√n种。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>对于我一个菜鸡实在是太南了，尤其是引理2推导根本理解不了，为此特地跑去问了我们大三的匡胤鑫匡佬，不愧是大佬，一张图解决问题，萌新瑟瑟发抖…<br>绘制一个y = n × d^-1 的反函数图，此时除法下取整取值种类数表示的是反函数下方的矩形总数，从原点到(0,√n)上和从原点到(√n,0)上做垂直于坐标轴的射线进而绘制矩形，由图显然可得矩形最多只有超过2√n种。</p>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_3.jpg" alt="大佬手稿"></p>
 <p>菜鸡怎么就没想到反函数呢，嘤嘤嘤。<br><img src="%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E5%BC%95%E7%90%86%E7%90%86%E8%A7%A3%E9%9A%8F%E7%AC%94_4.jpg" alt=""></p>
 
@@ -514,15 +514,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">hello-world</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">技巧</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">hello-world</a>
               </li>
             
             <div class="clearfix"></div>
